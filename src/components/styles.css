@@ -1,0 +1,26 @@
+.react-resizable {
+  position: relative;
+}
+.react-resizable-handle {
+  position: absolute;
+  width: 62px;
+  height: 100%;
+  bottom: 0;  
+  right: -27px;
+  background: url('../images/drag-marker.png');
+  background-position: right;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  cursor: se-resize;
+  /* position: absolute;
+  width: 30px;
+  height: 100%;
+  background: url('../images/drag-marker.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  cursor: se-resize;
+  border-right: solid black 10px; */
+}

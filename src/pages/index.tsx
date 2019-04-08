@@ -8,6 +8,7 @@ import {
   XPosition,
   YPosition,
 } from '@dailybruin/lux'
+import DualPhotoSlider from '../components/DualPhotoSlider';
 
 export const query = graphql`
   query {
@@ -32,6 +33,11 @@ export const query = graphql`
 const IndexPage = ({ data }) => (
   <>
     <Head {...data.site.siteMetadata} />
+    <DualPhotoSlider
+      imageLeft="https://i.ytimg.com/vi/WTvgKd72kCs/maxresdefault.jpg"
+      imageRight="http://www.westernrivers.org/images/imagebank/Smith%20River%20digital%20wallpaper%20-%201280px%20x%20720px.jpg"
+    />
+
     <CoverPhoto
       headline={data.kerckhoffArticle.headline}
       authors={data.kerckhoffArticle.author}
