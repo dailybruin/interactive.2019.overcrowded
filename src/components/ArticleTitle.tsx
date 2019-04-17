@@ -29,11 +29,11 @@ export class ArticleTitle extends React.Component<
           background: ${this.state.backgroundColor};
           padding: 30px;
           background-clip: padding-box;
-          padding-left: 200px;
+          padding-left: 25%;
           width: 75%;
           border-top-right-radius: 20px;
           border-bottom-right-radius: 20px;
-          @media screen and (max-width: 481px) {
+          @media screen and (max-width: 500px) {
             align-content: center;
             border-radius: 0px;
             width: 100%;
@@ -51,7 +51,7 @@ export class ArticleTitle extends React.Component<
             h1 {
               margin-bottom: 0px;
             }
-            @media screen and (max-width: 481px) {
+            @media screen and (max-width: 500px) {
               font-size: 48px;
             }
           `}
@@ -65,7 +65,7 @@ export class ArticleTitle extends React.Component<
             font-weight: 300;
             font-size: 32px;
             line-height: normal;
-            @media screen and (max-width: 481px) {
+            @media screen and (max-width: 500px) {
               font-size: 24px;
             }
           `}
