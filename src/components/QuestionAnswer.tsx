@@ -9,7 +9,7 @@ interface QAprops {
 
 const odd = css`
   background-color: #f2f2f2;
-  border-radius: 20px;
+  border-radius: 20px 0 0 20px;
 `
 const even = css`
   background-color: #fff;
@@ -47,7 +47,6 @@ class QuestionAnswer extends React.Component<QAprops> {
       display: flex;
       flex-direction: column;
       margin-left: 96px;
-      margin-right: -5px;
       padding: 10px 0px 70px 60px;
       ${alternating}
     `
