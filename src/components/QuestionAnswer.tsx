@@ -9,25 +9,32 @@ interface QAprops {
 
 const odd = css`
   background-color: #f2f2f2;
-  border-radius: 20px 0 0 20px;
 `
 const even = css`
-  background-color: #fff;
+  @media (min-width: 944px) {
+    background-color: #fff;
+  }
+  background-color: #effaff;
 `
 const question = css`
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 910px;
   font-style: italic;
   font-weight: bold;
   color: #004c76;
+  @media (min-width: 944px) {
+    width: 910px;
+  }
 `
+
 const answer = css`
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 944px;
+  @media (min-width: 944px) {
+    width: 944px;
+  }
 `
 
 const largeLetter = css`
@@ -43,11 +50,12 @@ class QuestionAnswer extends React.Component<QAprops> {
     let alternating = this.props.even ? even : odd
     const qaStyle = css`
       font-family: Karla;
-      color: #000000;
       display: flex;
       flex-direction: column;
       margin-left: 96px;
+      margin-top: 32px;
       padding: 10px 0px 70px 60px;
+      border-radius: 20px 0 0 20px;
       ${alternating}
     `
     return (
