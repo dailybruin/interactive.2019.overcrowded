@@ -11,6 +11,7 @@ import {
   XPosition,
   YPosition,
 } from '@dailybruin/lux'
+import { DUMMY_DO_NOT_USE_THIS_OR_YOU_WILL_BE_FIRED_Navbar } from '../components/Navbar'
 
 export const query = graphql`
   query {
@@ -34,7 +35,8 @@ export const query = graphql`
 `
 const IndexPage = ({ data }) => (
   <>
-    <Head {...data.site.siteMetadata} />
+    {/* <Head {...data.site.siteMetadata} /> */}
+    <DUMMY_DO_NOT_USE_THIS_OR_YOU_WILL_BE_FIRED_Navbar />
     <CoverPhoto
       headline={data.kerckhoffArticle.headline}
       authors={data.kerckhoffArticle.author}
