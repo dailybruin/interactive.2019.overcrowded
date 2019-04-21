@@ -8,7 +8,7 @@ import {
   XPosition,
   YPosition,
 } from '@dailybruin/lux'
-
+import GifPhoto from '../components/gif'
 export const query = graphql`
   query {
     site {
@@ -32,7 +32,14 @@ export const query = graphql`
 const IndexPage = ({ data }) => (
   <>
     <Head {...data.site.siteMetadata} />
-    <CoverPhoto
+    {/* <CoverPhoto
+      headline={data.kerckhoffArticle.headline}
+      authors={data.kerckhoffArticle.author}
+      imageURL="https://chancellor.ucla.edu/wp-content/uploads/2018/07/ChancellorBlock_1366x912_acf_cropped.jpg"
+      xPosition={XPosition.Center}
+      yPosition={YPosition.Center}
+    /> */}
+    <GifPhoto
       headline={data.kerckhoffArticle.headline}
       authors={data.kerckhoffArticle.author}
       imageURL="https://chancellor.ucla.edu/wp-content/uploads/2018/07/ChancellorBlock_1366x912_acf_cropped.jpg"
