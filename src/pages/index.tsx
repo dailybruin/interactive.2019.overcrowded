@@ -33,7 +33,7 @@ export const query = graphql`
 const IndexPage = ({ data }) => (
   <>
     <Head {...data.site.siteMetadata} />
-    <SectionHeader subtitle="SUBTITLE" subtext="YO"/>
+    <SectionHeader subtitle="SUBTITLE" subtext="YO" subtext2="PUT A DESCRIPTION? OF THE SECTION? GIVE LIKE A SENTENCE OR TWO, VERY SHORT NOT LONG MAYBE THIS IS OPTIONAL"/>
     <Article dropcap={true} content={data.kerckhoffArticle.content} />
     <Footer developers="Nathan Smith" copyrightYear={2018} />
   </>
