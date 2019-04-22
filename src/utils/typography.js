@@ -10,15 +10,11 @@ const typography = new Typography({
     },
     {
       name: 'Open Sans',
-      styles:['800i','700'],
+      styles:['800i'],
     },
     {
       name: 'Open Sans Condensed',
       styles:['300'],
-    },
-    {
-      name: 'Karla',
-      styles:['400'],
     },
   ],
   headerFontFamily: ['Georgia', 'serif'],
