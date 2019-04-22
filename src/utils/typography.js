@@ -19,7 +19,6 @@ const typography = new Typography({
   ],
   headerFontFamily: ['Georgia', 'serif'],
   bodyFontFamily: ['Libre Baskerville', 'serif'],
-
 })
 
 export default typography
