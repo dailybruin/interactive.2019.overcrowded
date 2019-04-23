@@ -9,6 +9,7 @@ import {
   YPosition,
 } from '@dailybruin/lux'
 import DualPhotoSlider from '../components/DualPhotoSlider';
+import {css} from 'emotion'
 
 export const query = graphql`
   query {
@@ -33,10 +34,28 @@ export const query = graphql`
 const IndexPage = ({ data }) => (
   <>
     <Head {...data.site.siteMetadata} />
-    <DualPhotoSlider
-      imageLeft="https://i.ytimg.com/vi/WTvgKd72kCs/maxresdefault.jpg"
-      imageRight="http://www.westernrivers.org/images/imagebank/Smith%20River%20digital%20wallpaper%20-%201280px%20x%20720px.jpg"
-    />
+    {/* <PhotoMatrix
+      imageURLs={[
+        "https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950",
+        "https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950",
+        "https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950",
+        "https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950",
+        "https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950",
+        "https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950",
+        "https://vignette.wikia.nocookie.net/ttte/images/8/80/MainBenCGI.png/revision/latest/scale-to-width-down/185?cb=20180924055711",
+      ]}
+      caption="hello my name is ligma"
+    /> */}
+    <div className={css`width: 100%;`}>
+      <DualPhotoSlider
+        titleLeft="ligma"
+        titleRight="ligma"
+        imageLeft="https://i.ytimg.com/vi/WTvgKd72kCs/maxresdefault.jpg"
+        imageRight="http://www.westernrivers.org/images/imagebank/Smith%20River%20digital%20wallpaper%20-%201280px%20x%20720px.jpg"
+        height={360}
+      />
+    </div>
+
 
     <CoverPhoto
       headline={data.kerckhoffArticle.headline}
