@@ -13,6 +13,10 @@ const typography = new Typography({
       styles: ['700'],
     },
     {
+      name: 'Open Sans Condensed',
+      styles: ['700'],
+    },
+    {
       name: 'Karla',
       styles: ['400'],
     },
