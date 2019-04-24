@@ -37,27 +37,22 @@ export const query = graphql`
 const IndexPage = ({ data }) => (
   <>
     <Head {...data.site.siteMetadata} />
-    <div className={css`
-      width: 100%;
-      height: 80vh;
-      @media (max-width: 900px) {
-        height: 320vh;
-      }
-    `}>
-      <PhotoMatrix
-        imageURLs={[
-          "https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950",
-          "https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950",
-          "https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950",
-          "https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950",
-          "https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950",
-          "https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950",
-          "https://vignette.wikia.nocookie.net/ttte/images/8/80/MainBenCGI.png/revision/latest/scale-to-width-down/185?cb=20180924055711",
-        ]}
-        caption="This part is a blurb listing out the 7 sources, their names, who they are, major, position, etc This part is a blurb listing out the 7 sources, their names, who they are, major, position, etc This part is a blurb listing out the 7 sources, their names, and everything else and pic cred. This part is a blurb listing out the 7 sources, their names, and everything else "
-      />
-    </div>
 
+    {/* dont use percent for height */}
+    <PhotoMatrix
+      width="100%"
+      height="100vh"
+      imageURLs={[
+        "https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950",
+        "https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950",
+        "https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950",
+        "https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950",
+        "https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950",
+        "https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950",
+        "https://vignette.wikia.nocookie.net/ttte/images/8/80/MainBenCGI.png/revision/latest/scale-to-width-down/185?cb=20180924055711",
+      ]}
+      caption="This part is a blurb listing out the 7 sources, their names, who they are, major, position, etc This part is a blurb listing out the 7 sources, their names, who they are, major, position, etc This part is a blurb listing out the 7 sources, their names, and everything else and pic cred. This part is a blurb listing out the 7 sources, their names, and everything else "
+    />
 
     <CoverPhoto
       headline={data.kerckhoffArticle.headline}
