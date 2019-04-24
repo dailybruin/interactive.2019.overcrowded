@@ -9,16 +9,20 @@ const typography = new Typography({
       styles: ['400'],
     },
     {
-      name: 'Open Sans',
-      styles: ['700'],
+      name: 'Karla',
+      styles: ['400'],
     },
     {
       name: 'Open Sans Condensed',
       styles: ['700'],
     },
     {
-      name: 'Karla',
-      styles: ['400'],
+      name: 'Open Sans',
+      styles: ['300', '700'],
+    },
+    {
+      name: 'Avenir Next Condensed',
+      styles: ['700'],
     },
   ],
   headerFontFamily: ['Georgia', 'serif'],
