@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import { ArticleTitle } from '../components/ArticleTitle'
+import { BottomNav } from '../components/BottomNav'
 import {
   Article,
   Byline,
@@ -47,9 +48,14 @@ const IndexPage = ({ data }) => (
     <ArticleTitle
       title="TITLE OF ARTICLE GOES HERE"
       byline="A BYLINE GOES HERE"
-      isMobile={false}
     />
     <Article dropcap={true} content={data.kerckhoffArticle.content} />
+    <BottomNav
+      atBeginning={false}
+      atEnd={false}
+      prevName="PREV: Name here"
+      nextName="NEXT: Name here"
+    />
     <Footer developers="Nathan Smith" copyrightYear={2018} />
   </>
 )
