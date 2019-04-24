@@ -11,12 +11,9 @@ import {
   XPosition,
   YPosition,
 } from '@dailybruin/lux'
-<<<<<<< HEAD
 import DualPhotoSlider from '../components/DualPhotoSlider';
 import {css} from 'emotion'
-=======
 import { DUMMY_DO_NOT_USE_THIS_OR_YOU_WILL_BE_FIRED_Navbar } from '../components/Navbar'
->>>>>>> 9f19c1f7b529909f4b160a2d6d1f4c0e0128faeb
 
 export const query = graphql`
   query {
@@ -40,7 +37,6 @@ export const query = graphql`
 `
 const IndexPage = ({ data }) => (
   <>
-<<<<<<< HEAD
     <Head {...data.site.siteMetadata} />
     {/* <PhotoMatrix
       imageURLs={[
@@ -54,21 +50,18 @@ const IndexPage = ({ data }) => (
       ]}
       caption="hello my name is ligma"
     /> */}
-    <div className={css`width: 100%;`}>
-      <DualPhotoSlider
-        titleLeft="ligma"
-        titleRight="ligma"
-        imageLeft="https://i.ytimg.com/vi/WTvgKd72kCs/maxresdefault.jpg"
-        imageRight="http://www.westernrivers.org/images/imagebank/Smith%20River%20digital%20wallpaper%20-%201280px%20x%20720px.jpg"
-        height={360}
-      />
-    </div>
+    <DualPhotoSlider
+      titleLeft="ligmx"
+      titleRight="ligmx"
+      imageLeft="https://i.ytimg.com/vi/WTvgKd72kCs/maxresdefault.jpg"
+      imageRight="http://www.westernrivers.org/images/imagebank/Smith%20River%20digital%20wallpaper%20-%201280px%20x%20720px.jpg"
+      heightWidthRatio={0.3}
+      width="100%"
+    />
 
 
-=======
     {/* <Head {...data.site.siteMetadata} /> */}
     <DUMMY_DO_NOT_USE_THIS_OR_YOU_WILL_BE_FIRED_Navbar />
->>>>>>> 9f19c1f7b529909f4b160a2d6d1f4c0e0128faeb
     <CoverPhoto
       headline={data.kerckhoffArticle.headline}
       authors={data.kerckhoffArticle.author}
