@@ -20,7 +20,7 @@ const buttonStyle = css`
   padding-top: 3px;
   padding-left: 5px;
   padding-right: 5px;
-  border: solid 2px #fff;
+  background-color: rgba(129, 129, 129, 0.5);
   color: #fff;
   display: flex;
   justify-content: center;
