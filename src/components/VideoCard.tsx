@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { css } from 'emotion'
+import { Video } from '@dailybruin/lux'
 import AnimateHeight from 'react-animate-height'
 
 interface VideoCardProps {
@@ -31,7 +32,7 @@ const containerStyle = css`
   display: flex;
   justify-content: center;
 `
-const videoStyle = css`
+const cardStyle = css`
   width: 1000px;
   border: 5px solid #14a0ef;
   border-radius: 100px;
@@ -54,9 +55,9 @@ const blurbStyle = css`
   font-family: Karla;
   font-size: 32px;
 `
-const dummyStyle = css`
-  height: 500px;
-  width: 80%;
+const videoStyle = css`
+  margin: 55px 0;
+  width: 100%;
 `
 class VideoCard extends React.Component<VideoCardProps, VideoCardState> {
   constructor(props) {
@@ -72,11 +73,15 @@ class VideoCard extends React.Component<VideoCardProps, VideoCardState> {
     return (
       <AnimateHeight duration={500} height={this.state.open ? 1000 : 500}>
         <div className={containerStyle}>
-          <div className={videoStyle}>
+          <div className={cardStyle}>
             <div className={titleStyle}>
               VIDEO: title will go somewhere here
             </div>
-            {this.state.open && <div className={dummyStyle}>Dummy Vidya</div>}
+            {this.state.open && (
+              <div className={videoStyle}>
+                <Video videoId={'5Jmce2tUn88'} />
+              </div>
+            )}
             <div className={blurbStyle}>
               let’s have a short one sentence blurb that tells us what the video
               is about and readers can pick if they want to watch it or not.
