@@ -8,6 +8,18 @@ const typography = new Typography({
       name: 'Libre Baskerville',
       styles: ['400'],
     },
+    {
+      name: 'Open Sans Condensed',
+      styles: ['700','300'],
+    },
+    {
+      name: 'Open Sans',
+      styles: ['300', '800i'],
+    },
+    {
+      name: 'Avenir Next Condensed',
+      styles: ['700'],
+    },
   ],
   headerFontFamily: ['Georgia', 'serif'],
   bodyFontFamily: ['Libre Baskerville', 'serif'],
