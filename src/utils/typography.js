@@ -9,12 +9,16 @@ const typography = new Typography({
       styles: ['400'],
     },
     {
+      name: 'Karla',
+      styles: ['400'],
+    },
+    {
       name: 'Open Sans Condensed',
       styles: ['700','300'],
     },
     {
       name: 'Open Sans',
-      styles: ['300', '800i'],
+      styles: ['300', '800i','700'],
     },
     {
       name: 'Avenir Next Condensed',
