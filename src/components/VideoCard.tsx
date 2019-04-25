@@ -2,7 +2,7 @@ import * as React from 'react'
 import { css } from 'emotion'
 import { Video } from '@dailybruin/lux'
 import AnimateHeight from 'react-animate-height'
-
+import Arrowup from '../images/arrow-up.svg'
 interface VideoCardProps {
   url?: string
 }
@@ -11,13 +11,10 @@ interface VideoCardState {
 }
 
 const buttonStyle = css`
-  font-size: 32px;
+  font-size: 30px;
   height: 30px;
   width: 30px;
-  border-radius: 150px;
-  padding-top: 3px;
-  padding-left: 5px;
-  padding-right: 5px;
+  border-radius: 50%;
   background-color: rgba(129, 129, 129, 0.5);
   color: #fff;
   display: flex;
@@ -95,7 +92,12 @@ class VideoCard extends React.Component<VideoCardProps, VideoCardState> {
                 };
               `}
             >
-              ^
+              <img
+                src={Arrowup}
+                className={css`
+                  margin: 0;
+                `}
+              />
             </div>
           </div>
         </div>

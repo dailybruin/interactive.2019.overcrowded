@@ -21,6 +21,7 @@ export class Navbar extends Component<INavbarProps> {
           font-family: 'Open Sans Condensed', sans-serif;
           position: sticky;
           top: 0;
+          z-index: 100;
         `}
       >
         <div
