@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { css } from 'react-emotion'
 
-
 interface TallProps {
   imageurl: string
   hoverimage: string
@@ -10,28 +9,28 @@ interface TallProps {
 }
 
 interface MyState {
-  notHovered: boolean;
+  notHovered: boolean
 }
 
 class ArticleCardCustom extends React.Component<TallProps, MyState> {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       notHovered: true,
-    };
+    }
   }
 
   handleEnter() {
     this.setState({
-      notHovered: false
-    });
+      notHovered: false,
+    })
   }
 
   handleLeave() {
     this.setState({
-      notHovered: true
-    });
+      notHovered: true,
+    })
   }
 
   render() {
@@ -61,48 +60,67 @@ class ArticleCardCustom extends React.Component<TallProps, MyState> {
 
         `}
       >
-      {this.state.notHovered ? (
-        <div
-          className={css`
-            font-family: Open Sans;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 36px;
-            line-height: normal;
-            color: #0088D4;
-            padding: 20px 75px 0 75px;
-          `}
-        >
-          {this.props.title}
-        </div> ) : (
-          <div className={css`display: none`}/>
+        {this.state.notHovered ? (
+          <div
+            className={css`
+              font-family: Open Sans;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 36px;
+              line-height: normal;
+              color: #0088d4;
+              padding: 20px 75px 0 75px;
+            `}
+          >
+            {this.props.title}
+          </div>
+        ) : (
+          <div
+            className={css`
+              display: none;
+            `}
+          />
         )}
         {this.state.notHovered ? (
-        <img className={css`
-          width: auto;
-          height: auto;
-          padding: 16px 16px 8px 16px;
-          margin-bottom: 0px;`}
-          src={this.props.imageurl}
-        />) : (
-          <div className={css`display: none`}/>
+          <img
+            className={css`
+              width: auto;
+              height: auto;
+              padding: 16px 16px 8px 16px;
+              margin-bottom: 0px;
+            `}
+            src={this.props.imageurl}
+          />
+        ) : (
+          <div
+            className={css`
+              display: none;
+            `}
+          />
         )}
         {this.state.notHovered ? (
-        <div
-          className={css`
-            /* font-family: bodyFont, serif; */
-            font-family: Karla;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 24px;
-            line-height: normal;
-            text-align: center;
-            padding: 0px 16px 40px 16px;
-          `}
-        >
-          {this.props.content}
-        </div>) : (
-          <div className={css`display: none`}>yup</div>
+          <div
+            className={css`
+              /* font-family: bodyFont, serif; */
+              font-family: Karla;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 24px;
+              line-height: normal;
+              text-align: center;
+              padding: 0px 16px 40px 16px;
+            `}
+          >
+            {this.props.content}
+          </div>
+        ) : (
+          <div
+            className={css`
+              display: none;
+            `}
+          >
+            yup
+          </div>
         )}
       </div>
     )
