@@ -14,11 +14,11 @@ const typography = new Typography({
     },
     {
       name: 'Open Sans Condensed',
-      styles: ['700','300'],
+      styles: ['700', '300'],
     },
     {
       name: 'Open Sans',
-      styles: ['300', '800i','700'],
+      styles: ['300', '800i', '700'],
     },
     {
       name: 'Avenir Next Condensed',
