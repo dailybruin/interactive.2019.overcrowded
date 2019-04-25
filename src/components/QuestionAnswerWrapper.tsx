@@ -8,13 +8,11 @@ interface QAWrapperProps {
 
 class QuestionAnswerWrapper extends React.Component<QAWrapperProps> {
   render() {
-    let even = true
-    let k = 0
-    const qaList = this.props.qa.map(qa => (
+    const qaList = this.props.qa.map((qa, idx) => (
       <QuestionAnswer
-        key={(k += 1)}
-        // don't @ me
-        even={(even = !even)}
+        key={idx}
+        // @mindip
+        even={idx % 2 === 0}
         question={qa.question}
         answer={qa.answer}
       />
