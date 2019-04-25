@@ -47,7 +47,7 @@ export default class GifPhoto extends React.Component<GifPhotoProps> {
         <div
           className={css`
             width: 100%;
-            height: 100vh;
+            height: 80vh;
             background: linear-gradient(
                 rgba(0, 0, 0, ${this.props.darken}),
                 rgba(0, 0, 0, ${this.props.darken})
@@ -92,7 +92,7 @@ export default class GifPhoto extends React.Component<GifPhotoProps> {
         <div
           className={css`
             width: 100%;
-            height: 127px;
+            height: 20vh;
             background-color: #ffffff;
           `}
         >
@@ -127,6 +127,9 @@ export default class GifPhoto extends React.Component<GifPhotoProps> {
                   border-radius: 50%;
                   height: 40px;
                   width: 40px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
                 `}
                 onClick={() => {
                   if (this.helloRef && this.helloRef.current) {
