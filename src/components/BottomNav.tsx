@@ -21,10 +21,10 @@ export class BottomNav extends React.Component<BottomNavProps> {
           font-family: 'Open Sans Condensed';
           font-style: normal;
           font-weight: bold;
-          font-size: 30px;
+          font-size: 2.5vw;
           line-height: normal;
-          @media screen and (max-width: 650px) {
-            font-size: 22px;
+          @media screen and (max-width: 800px) {
+            font-size: 20px;
           }
         `}
       >
@@ -32,7 +32,7 @@ export class BottomNav extends React.Component<BottomNavProps> {
           className={css`
             float: left;
             padding-left: 10%;
-            @media screen and (max-width: 650px) {
+            @media screen and (max-width: 800px) {
               padding-left: 5%;
             }
           `}
@@ -41,7 +41,10 @@ export class BottomNav extends React.Component<BottomNavProps> {
             <img
               className={css`
                 height: 24px;
-                @media screen and (max-width: 650px) {
+                @media screen and (max-width: 1100px) {
+                  height: 20px;
+                }
+                @media screen and (max-width: 900px) {
                   height: 16px;
                 }
               `}
@@ -54,7 +57,7 @@ export class BottomNav extends React.Component<BottomNavProps> {
           className={css`
             float: right;
             padding-right: 10%;
-            @media screen and (max-width: 650px) {
+            @media screen and (max-width: 800px) {
               padding-left: 5%;
             }
           `}
@@ -64,7 +67,10 @@ export class BottomNav extends React.Component<BottomNavProps> {
             <img
               className={css`
                 height: 24px;
-                @media screen and (max-width: 650px) {
+                @media screen and (max-width: 1100px) {
+                  height: 20px;
+                }
+                @media screen and (max-width: 900px) {
                   height: 16px;
                 }
               `}
