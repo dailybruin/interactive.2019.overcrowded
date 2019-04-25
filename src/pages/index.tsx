@@ -17,6 +17,7 @@ import QuestionAnswerWrapper from '../components/QuestionAnswerWrapper'
 import PhotoMatrix from '../components/PhotoMatrix'
 import GifPhoto from '../components/gif'
 import { DUMMY_DO_NOT_USE_THIS_OR_YOU_WILL_BE_FIRED_Navbar } from '../components/Navbar'
+import VideoCard from '../components/VideoCard'
 
 export const query = graphql`
   query {
@@ -86,6 +87,7 @@ const IndexPage = ({ data }) => (
     />
     {/* <Head {...data.site.siteMetadata} /> */}
     <DUMMY_DO_NOT_USE_THIS_OR_YOU_WILL_BE_FIRED_Navbar />
+    <VideoCard />
     <GifPhoto
       headline={data.kerckhoffArticle.headline}
       authors={data.kerckhoffArticle.author}
