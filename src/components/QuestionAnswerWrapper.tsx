@@ -11,7 +11,7 @@ class QuestionAnswerWrapper extends React.Component<QAWrapperProps> {
     const qaList = this.props.qa.map((qa, idx) => (
       <QuestionAnswer
         key={idx}
-        // @mindip
+        // @
         even={idx % 2 === 0}
         question={qa.question}
         answer={qa.answer}
