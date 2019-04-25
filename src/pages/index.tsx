@@ -11,6 +11,7 @@ import {
   XPosition,
   YPosition,
 } from '@dailybruin/lux'
+import QuestionAnswerWrapper from '../components/QuestionAnswerWrapper'
 import PhotoMatrix from '../components/PhotoMatrix'
 import { css } from 'emotion'
 import GifPhoto from '../components/gif'
@@ -36,6 +37,26 @@ export const query = graphql`
     }
   }
 `
+const qaStrings = [
+  {
+    question:
+      'Blah blah blah blah ask my question there is a question that goes here and it might be long or not long? my question there is a question that goes here and it might be long or not longmy question there is a question that goes here and it might be long or not long',
+    answer:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac nunc eget felis lobortis dictum vel in sem. Nullam quis vehicula metus. Maecenas sapien magna, porta lacinia fermentum ut, aliquet in neque. Aliquam erat volutpat. Nunc vestibulum arcu nibh, eu placerat eros consectetur et. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam aliquet sit amet magna id iaculis. Maecenas dignissim, leo fermentum pellentesque fringilla, dui tellus dapibus magna, ut dapibus justo est non augue. Praesent nec neque faucibus, euismod sem eget, fringilla odio. Aenean convallis fermentum sapien a posuere. Fusce odio dui, pharetra a aliquam quis, hendrerit at mi. Sed volutpat efficitur mauris, et volutpat ipsum aliquet a. Nunc suscipit neque quis lobortis pharetra. Donec maximus metus velit, quis mollis tortor blandit',
+  },
+  {
+    question:
+      'Blah blah blah blah ask my question there is a question that goes here and it might be long or not long?',
+    answer:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac nunc eget felis lobortis dictum vel in sem. Nullam quis vehicula metus. Maecenas sapien magna, porta lacinia fermentum ut, aliquet in neque. Aliquam erat volutpat. Nunc vestibulum arcu nibh, eu placerat eros consectetur et. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam aliquet sit amet magna id iaculis. Maecenas dignissim, leo fermentum pellentesque fringilla, dui tellus dapibus magna, ut dapibus justo est non augue. Praesent nec neque faucibus, euismod sem eget, fringilla odio. Aenean convallis fermentum sapien a posuere. Fusce odio dui, pharetra a aliquam quis, hendrerit at mi. Sed volutpat efficitur mauris, et volutpat ipsum aliquet a. Nunc suscipit neque quis lobortis pharetra. Donec maximus metus velit, quis mollis tortor blandit',
+  },
+  {
+    question:
+      'Blah blah blah blah ask my question there is a question that goes here and it might be long or not long?',
+    answer:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac nunc eget felis lobortis dictum vel in sem. Nullam quis vehicula metus. Maecenas sapien magna, porta lacinia fermentum ut, aliquet in neque. Aliquam erat volutpat. Nunc vestibulum arcu nibh, eu placerat eros consectetur et. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam aliquet sit amet magna id iaculis. Maecenas dignissim, leo fermentum pellentesque fringilla, dui tellus dapibus magna, ut dapibus justo est non augue. Praesent nec neque faucibus, euismod sem eget, fringilla odio. Aenean convallis fermentum sapien a posuere. Fusce odio dui, pharetra a aliquam quis, hendrerit at mi. Sed volutpat efficitur mauris, et volutpat ipsum aliquet a. Nunc suscipit neque quis lobortis pharetra. Donec maximus metus velit, quis mollis tortor blandit',
+  },
+]
 const IndexPage = ({ data }) => (
   <>
     <Head {...data.site.siteMetadata} />
@@ -61,6 +82,7 @@ const IndexPage = ({ data }) => (
       xPosition={XPosition.Center}
       yPosition={YPosition.Center}
     />
+    <QuestionAnswerWrapper qa={qaStrings} />
     <ArticleTitle
       title="TITLE OF ARTICLE GOES HERE"
       byline="A BYLINE GOES HERE"
