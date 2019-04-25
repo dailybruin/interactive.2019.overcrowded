@@ -5,7 +5,6 @@ import { css } from 'react-emotion'
 interface ArticleTitleProps {
   title: string
   byline: string
-  isMobile: boolean
 }
 
 interface ArticleTitleState {
