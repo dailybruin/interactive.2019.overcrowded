@@ -60,7 +60,9 @@ class DesktopNavbar extends Component<INavbarProps> {
         className={css`
           ${isSelected ? 'border-bottom: 4px solid #FFB48A;' : ''}
           display: inline-block;
-          cursor: pointer;
+          cursor: ${entry.title.substring(0, 5) === 'Part '
+            ? 'not-allowed'
+            : 'pointer'};
           height: 2.1rem;
           font-size: 1.5rem;
           padding: 0;
@@ -68,6 +70,8 @@ class DesktopNavbar extends Component<INavbarProps> {
         `}
         onClick={this.handleClick.bind(entry.id)}
       >
+        {console.log(entry.title)}
+        {console.log(entry.title.substring(0, 6))}
         {entry.title}
       </div>
     )
@@ -204,11 +208,11 @@ class MobileNavbar extends Component<INavbarProps, IMobileNavbarState> {
 
 export function DUMMY_DO_NOT_USE_THIS_OR_YOU_WILL_BE_FIRED_Navbar() {
   const props: INavbarProps = {
-    title: 'BLAH OVERCROWDING',
+    title: 'OVERCROWDED',
     entries: [
       {
         id: '1',
-        title: 'Part 1',
+        title: 'Growing Pains',
       },
       {
         id: '2',
