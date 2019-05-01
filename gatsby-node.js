@@ -57,7 +57,7 @@ exports.createPages = async ({ graphql, actions }) => {
     {
       title: 'Growing_Pains',
       slug: 'ent.housing.aml',
-      path: '/',
+      path: '/housing',
     },
   ]
   data.forEach(page => {
@@ -81,12 +81,9 @@ exports.createPages = async ({ graphql, actions }) => {
     `).then(_ => {
       createPage({
         path: `${page.path}`,
-        component: path.resolve(`./src/templates/page.tsx`),
+        component: path.resolve(`./src/templates/section.tsx`),
         context: {
-          term: issue.term,
-          articles: issue.articles,
-          coverphoto: issue.coverphoto,
-          title: issue.title,
+          title: page.title,
         },
       })
     })
