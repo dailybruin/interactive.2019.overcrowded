@@ -48,9 +48,7 @@ export class Navbar extends Component<INavbarProps> {
 }
 
 class DesktopNavbar extends Component<INavbarProps> {
-  handleClick = (id: string) => {
-    // TODO
-  }
+  handleClick = (id: string) => {}
 
   renderItem(entry: INavbarEntry) {
     const isSelected = entry.id === this.props.selectedId

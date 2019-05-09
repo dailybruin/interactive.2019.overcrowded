@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import { Article, Image } from '@dailybruin/lux'
 import { Navbar } from '../components/Navbar'
 import SectionHeader from '../components/SectionHeader'
+import ArticleTitle from '../components/ArticleTitle'
 import { css } from 'react-emotion'
 
 export const query = graphql`
@@ -34,38 +35,44 @@ export const query = graphql`
 // {}
 
 export default ({ data, pageContext }) => {
-  console.log(data)
-  console.log('context: ', pageContext)
-  // const articles = data.pageArticles.articles
-  // const Subheading = props => <h2 className={css``}>{props.text}</h2>
-  // console.log(articles[0].content)
-  // console.log(articles[1].content)
+  const articles = []
+  data.allKerckhoffArticle.edges.forEach(edge => {
+    articles.push(edge.node)
+  })
+  const Subheading = props => <h2 className={css``}>{props.text}</h2>
+  console.log(pageContext)
   return (
     <>
-      {/* <Navbar
+      <Navbar
         title={pageContext.title}
         entries={[
-          { id: '1', title: 'Overcrowd' },
-          { id: '2', title: 'Overcrowd' },
+          { id: '1', title: 'Housing' },
+          { id: '2', title: 'Tech' },
           { id: '3', title: 'Overcrowd' },
           { id: '4', title: 'Overcrowd' },
           { id: '5', title: 'Overcrowd' },
         ]}
         selectedId={'1'}
       />
-      <SectionHeader subtitle={'Overcrowded'} />
+      <SectionHeader subtitle={pageContext.sub.toUpperCase()} />
       <div>{pageContext.title}</div>
-      {articles.map((article, idx) => {
+      {articles.map((article, i) => {
         return (
-          <Article
-            content={article.content}
-            customTypeComponentMapping={{
-              subheading: Subheading,
-              image: Image,
-            }}
-          />
+          <>
+            {article.title && article.byline && (
+              <ArticleTitle title={article.title} byline={article.byline} />
+            )}
+            <Article
+              key={i}
+              content={article.content}
+              customTypeComponentMapping={{
+                subheading: Subheading,
+                image: Image,
+              }}
+            />
+          </>
         )
-      })} */}
+      })}
     </>
   )
 }

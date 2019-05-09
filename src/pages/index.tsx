@@ -13,7 +13,6 @@ import {
   YPosition,
 } from '@dailybruin/lux'
 import DualPhotoSlider from '../components/DualPhotoSlider'
-import { css } from 'react-emotion'
 import QuestionAnswerWrapper from '../components/QuestionAnswerWrapper'
 import PhotoMatrix from '../components/PhotoMatrix'
 import GifPhoto from '../components/gif'

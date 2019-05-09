@@ -8,12 +8,12 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const data = [
     {
-      title: 'Growing_Pains',
+      sub: 'Housing',
       slug: '*housing*',
       path: '/housing',
     },
     {
-      title: 'Growing_Tech_Pains',
+      sub: 'Tech',
       slug: '*tech*',
       path: '/tech',
     },
@@ -39,12 +39,12 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
     `).then(result => {
-      console.log(result)
       createPage({
         path: `${page.path}`,
         component: path.resolve(`./src/templates/section.tsx`),
         context: {
           slug: page.slug,
+          sub: page.sub,
         },
       })
     })
