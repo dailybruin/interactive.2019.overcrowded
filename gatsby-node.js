@@ -9,12 +9,12 @@ exports.createPages = async ({ graphql, actions }) => {
   const data = [
     {
       sub: 'Housing',
-      slug: '*housing*',
+      slug: 'housing',
       path: '/housing',
     },
     {
       sub: 'Tech',
-      slug: '*tech*',
+      slug: 'tech',
       path: '/tech',
     },
   ]
@@ -43,6 +43,7 @@ exports.createPages = async ({ graphql, actions }) => {
         path: `${page.path}`,
         component: path.resolve(`./src/templates/section.tsx`),
         context: {
+          query: '*' + page.slug + '*',
           slug: page.slug,
           sub: page.sub,
         },

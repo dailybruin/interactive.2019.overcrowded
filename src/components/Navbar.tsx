@@ -48,7 +48,10 @@ export class Navbar extends Component<INavbarProps> {
 }
 
 class DesktopNavbar extends Component<INavbarProps> {
-  handleClick = (id: string) => {}
+  handleClick = (id: string) => {
+    console.log(id)
+    // window.location = '/' + id
+  }
 
   renderItem(entry: INavbarEntry) {
     const isSelected = entry.id === this.props.selectedId
@@ -66,10 +69,10 @@ class DesktopNavbar extends Component<INavbarProps> {
           padding: 0;
           margin: auto 0;
         `}
-        onClick={this.handleClick.bind(entry.id)}
+        onClick={() => {
+          window.location.href = '/' + entry.id
+        }}
       >
-        {console.log(entry.title)}
-        {console.log(entry.title.substring(0, 6))}
         {entry.title}
       </div>
     )
@@ -105,9 +108,7 @@ class MobileNavbar extends Component<INavbarProps, IMobileNavbarState> {
     this.setState({ expanded: !expanded })
   }
 
-  handleClick = (id: string) => {
-    // TODO
-  }
+  handleClick = (id: string) => {}
 
   renderItem(entry: INavbarEntry) {
     const isSelected = entry.id === this.props.selectedId

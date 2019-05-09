@@ -3,12 +3,12 @@ import { graphql } from 'gatsby'
 import { Article, Image } from '@dailybruin/lux'
 import { Navbar } from '../components/Navbar'
 import SectionHeader from '../components/SectionHeader'
-import ArticleTitle from '../components/ArticleTitle'
+import { ArticleTitle } from '../components/ArticleTitle'
 import { css } from 'react-emotion'
 
 export const query = graphql`
-  query($slug: String!) {
-    allKerckhoffArticle(filter: { title: { glob: $slug } }) {
+  query($query: String!) {
+    allKerckhoffArticle(filter: { title: { glob: $query } }) {
       edges {
         node {
           title
@@ -46,13 +46,13 @@ export default ({ data, pageContext }) => {
       <Navbar
         title={pageContext.title}
         entries={[
-          { id: '1', title: 'Housing' },
-          { id: '2', title: 'Tech' },
+          { id: 'housing', title: 'Housing' },
+          { id: 'tech', title: 'Tech' },
           { id: '3', title: 'Overcrowd' },
           { id: '4', title: 'Overcrowd' },
           { id: '5', title: 'Overcrowd' },
         ]}
-        selectedId={'1'}
+        selectedId={pageContext.slug}
       />
       <SectionHeader subtitle={pageContext.sub.toUpperCase()} />
       <div>{pageContext.title}</div>
