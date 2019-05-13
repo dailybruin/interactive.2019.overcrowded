@@ -40,7 +40,7 @@ module.exports = {
     {
       resolve: '@dailybruin/gatsby-source-kerckhoff',
       options: {
-        slug: 'online.demoaml',
+        slug: 'interactive.2019.overcrowded',
       },
     },
     {

@@ -13,12 +13,12 @@ import {
   YPosition,
 } from '@dailybruin/lux'
 import DualPhotoSlider from '../components/DualPhotoSlider'
-import { css } from 'react-emotion'
 import QuestionAnswerWrapper from '../components/QuestionAnswerWrapper'
 import PhotoMatrix from '../components/PhotoMatrix'
 import GifPhoto from '../components/gif'
 import { DUMMY_DO_NOT_USE_THIS_OR_YOU_WILL_BE_FIRED_Navbar } from '../components/Navbar'
 import VideoCard from '../components/VideoCard'
+import SectionHeader from '../components/SectionHeader'
 
 export const query = graphql`
   query {
@@ -89,6 +89,7 @@ const IndexPage = ({ data }) => (
     {/* <Head {...data.site.siteMetadata} /> */}
     <DUMMY_DO_NOT_USE_THIS_OR_YOU_WILL_BE_FIRED_Navbar />
     <VideoCard />
+    <SectionHeader subtitle="asdf" />
     <GifPhoto
       headline={data.kerckhoffArticle.headline}
       authors={data.kerckhoffArticle.author}

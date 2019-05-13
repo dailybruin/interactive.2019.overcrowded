@@ -49,7 +49,8 @@ export class Navbar extends Component<INavbarProps> {
 
 class DesktopNavbar extends Component<INavbarProps> {
   handleClick = (id: string) => {
-    // TODO
+    console.log(id)
+    // window.location = '/' + id
   }
 
   renderItem(entry: INavbarEntry) {
@@ -60,13 +61,17 @@ class DesktopNavbar extends Component<INavbarProps> {
         className={css`
           ${isSelected ? 'border-bottom: 4px solid #FFB48A;' : ''}
           display: inline-block;
-          cursor: pointer;
+          cursor: ${entry.title.substring(0, 5) === 'Part '
+            ? 'not-allowed'
+            : 'pointer'};
           height: 2.1rem;
           font-size: 1.5rem;
           padding: 0;
           margin: auto 0;
         `}
-        onClick={this.handleClick.bind(entry.id)}
+        onClick={() => {
+          window.location.href = '/' + entry.id
+        }}
       >
         {entry.title}
       </div>
@@ -103,9 +108,7 @@ class MobileNavbar extends Component<INavbarProps, IMobileNavbarState> {
     this.setState({ expanded: !expanded })
   }
 
-  handleClick = (id: string) => {
-    // TODO
-  }
+  handleClick = (id: string) => {}
 
   renderItem(entry: INavbarEntry) {
     const isSelected = entry.id === this.props.selectedId
@@ -204,11 +207,11 @@ class MobileNavbar extends Component<INavbarProps, IMobileNavbarState> {
 
 export function DUMMY_DO_NOT_USE_THIS_OR_YOU_WILL_BE_FIRED_Navbar() {
   const props: INavbarProps = {
-    title: 'BLAH OVERCROWDING',
+    title: 'OVERCROWDED',
     entries: [
       {
         id: '1',
-        title: 'Part 1',
+        title: 'Growing Pains',
       },
       {
         id: '2',
