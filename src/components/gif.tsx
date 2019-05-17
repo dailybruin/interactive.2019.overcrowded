@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { css } from 'react-emotion'
+import { Byline } from '@dailybruin/lux'
 import ExpandMore from '@material-ui/icons'
 
 export enum XPosition {
@@ -85,7 +86,7 @@ export default class GifPhoto extends React.Component<GifPhotoProps> {
                 margin-right: 2rem;
               `}
             >
-              BLAH OVERCROWDED
+              {this.props.headline}
             </h1>
           </div>
         </div>
@@ -107,7 +108,7 @@ export default class GifPhoto extends React.Component<GifPhotoProps> {
               margin-right: 2rem;
             `}
           >
-            a five part series by someone
+            a five part series
           </p>
           <div
             className={css`

@@ -16,6 +16,7 @@ import DualPhotoSlider from '../components/DualPhotoSlider'
 import QuestionAnswerWrapper from '../components/QuestionAnswerWrapper'
 import PhotoMatrix from '../components/PhotoMatrix'
 import GifPhoto from '../components/gif'
+import { Navbar } from '../components/Navbar'
 import { DUMMY_DO_NOT_USE_THIS_OR_YOU_WILL_BE_FIRED_Navbar } from '../components/Navbar'
 import VideoCard from '../components/VideoCard'
 import SectionHeader from '../components/SectionHeader'
@@ -30,12 +31,20 @@ export const query = graphql`
         image
       }
     }
-    kerckhoffArticle {
-      headline
-      author
-      content {
-        type
-        value
+    allKerckhoffArticle(filter: { title: { glob: "*housing*" } }) {
+      edges {
+        node {
+          title
+          author
+          coverAlt
+          coverImg
+          headline
+          coverCredit
+          content {
+            type
+            value
+          }
+        }
       }
     }
   }
@@ -60,56 +69,55 @@ const qaStrings = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac nunc eget felis lobortis dictum vel in sem. Nullam quis vehicula metus. Maecenas sapien magna, porta lacinia fermentum ut, aliquet in neque. Aliquam erat volutpat. Nunc vestibulum arcu nibh, eu placerat eros consectetur et. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam aliquet sit amet magna id iaculis. Maecenas dignissim, leo fermentum pellentesque fringilla, dui tellus dapibus magna, ut dapibus justo est non augue. Praesent nec neque faucibus, euismod sem eget, fringilla odio. Aenean convallis fermentum sapien a posuere. Fusce odio dui, pharetra a aliquam quis, hendrerit at mi. Sed volutpat efficitur mauris, et volutpat ipsum aliquet a. Nunc suscipit neque quis lobortis pharetra. Donec maximus metus velit, quis mollis tortor blandit',
   },
 ]
-const IndexPage = ({ data }) => (
-  <>
-    <Head {...data.site.siteMetadata} />
-    {/* dont use percent for height */}
-    <PhotoMatrix
-      width="100%"
-      height="100vh"
-      imageURLs={[
-        'https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950',
-        'https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950',
-        'https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950',
-        'https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950',
-        'https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950',
-        'https://vignette.wikia.nocookie.net/ttte/images/e/ec/MainHenryCGI.png/revision/latest?cb=20190202160950',
-        'https://vignette.wikia.nocookie.net/ttte/images/8/80/MainBenCGI.png/revision/latest/scale-to-width-down/185?cb=20180924055711',
-      ]}
-      caption="hello my name is ligma"
-    />
-    <DualPhotoSlider
-      titleLeft="ligmx"
-      titleRight="ligmx"
-      imageLeft="https://i.ytimg.com/vi/WTvgKd72kCs/maxresdefault.jpg"
-      imageRight="http://www.westernrivers.org/images/imagebank/Smith%20River%20digital%20wallpaper%20-%201280px%20x%20720px.jpg"
-      heightWidthRatio={0.3}
-      width="100%"
-    />
-    {/* <Head {...data.site.siteMetadata} /> */}
-    <DUMMY_DO_NOT_USE_THIS_OR_YOU_WILL_BE_FIRED_Navbar />
-    <VideoCard />
-    <SectionHeader subtitle="asdf" />
-    <GifPhoto
-      headline={data.kerckhoffArticle.headline}
-      authors={data.kerckhoffArticle.author}
-      imageURL="https://chancellor.ucla.edu/wp-content/uploads/2018/07/ChancellorBlock_1366x912_acf_cropped.jpg"
-      yPosition={YPosition.Center}
-    />
-    <QuestionAnswerWrapper qa={qaStrings} />
-    <ArticleTitle
-      title="TITLE OF ARTICLE GOES HERE"
-      byline="A BYLINE GOES HERE"
-    />
-    <Article dropcap={true} content={data.kerckhoffArticle.content} />
-    <BottomNav
-      atBeginning={false}
-      atEnd={false}
-      prevName="PREV: Name here"
-      nextName="NEXT: Name here"
-    />
-    <Footer developers="Nathan Smith" copyrightYear={2018} />
-  </>
-)
+const IndexPage = ({ data }) => {
+  const articles = []
+  data.allKerckhoffArticle.edges.forEach(edge => {
+    articles.push(edge.node)
+  })
+  const Subheading = props => <h2>{props.text}</h2>
+  return (
+    <>
+      <Head {...data.site.siteMetadata} siteName={'Overcrowded'} />
+      <GifPhoto
+        headline={'Overcrowded'}
+        authors={[]}
+        imageURL="https://chancellor.ucla.edu/wp-content/uploads/2018/07/ChancellorBlock_1366x912_acf_cropped.jpg"
+        yPosition={YPosition.Center}
+      />
+      <Navbar
+        title={'Housing'}
+        entries={[
+          { id: 'housing', title: 'Housing' },
+          { id: 'tech', title: 'Tech' },
+          { id: '3', title: 'Part 3' },
+          // { id: 'international', title: 'International' },
+          { id: '4', title: 'Part 4' },
+          { id: '5', title: 'Part 5' },
+        ]}
+        selectedId={'housing'}
+      />
+      <SectionHeader subtitle={'HOUSING'} />
+      {articles.map((article, i) => {
+        console.log(article.content)
+        return (
+          <>
+            {article.title && article.byline && (
+              <ArticleTitle title={article.title} byline={article.byline} />
+            )}
+            <Article
+              key={i}
+              content={article.content}
+              customTypeComponentMapping={{
+                subheading: Subheading,
+                image: Image,
+              }}
+            />
+          </>
+        )
+      })}
+      <Footer developers="" copyrightYear={2019} />
+    </>
+  )
+}
 
 export default IndexPage

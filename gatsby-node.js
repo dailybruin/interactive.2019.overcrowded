@@ -17,6 +17,11 @@ exports.createPages = async ({ graphql, actions }) => {
       slug: 'tech',
       path: '/tech',
     },
+    {
+      sub: 'International',
+      slug: 'international',
+      path: '/international',
+    },
   ]
   data.forEach(page => {
     return graphql(`
